@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC  
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"  
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<!--解决乱码 -->
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+
+	<package name="pk" namespace="/" extends="struts-default,json-default">
+
+		<action name="findAllByLongAction" class="action.LongToShortAction"
+			method="findAllByLong">
+		</action>
+
+		<action name="findLongByShort" class="action.LongToShortAction"
+			method="findLongByShort">
+		</action>
+
+		<action name="*" class="action.LongToShortAction" method="findLongByShort"></action>
+
+		<action name="reStoreShortAction" class="action.LongToShortAction"
+			method="reStoreShort"></action>
+
+		<action name="findIdByLongAction" class="action.LongToShortAction"
+			method="findIdByLong"></action>
+
+		<action name="findByShortAction" class="action.LongToShortAction"
+			method="findByShort"></action>
+
+	</package>
+
+
+</struts>
